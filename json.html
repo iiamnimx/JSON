@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+var myObj={name:"Nimisha",age : 14, grade: 8};
+var myJSON= JSON.stringify(myObj);
+var newObj=JSON.parse(myJSON);
+document.getElementById("result").innerHTML= newObj.name;
+        </script>
+        <p id="result1"></p>
+        <script>
+            async function add(a,b){
+                let response = await a + b;
+                display(response);
+            }
+            function display(some) {
+                document.getElementById("result1").innerHTML=some;
+            }
+            add(5,20);
+        </script>
+        <p id="demo"></p>
+        <script>
+            function myDisplayer(some){
+                document.getElementById("demo").innerHTML = some;
+            }
+            function sum(a,b){
+                var sum = a+b;
+                myDisplayer(sum);
+            }
+            let myPromise = new Promise(function(myResolve,myReject) {
+                let x = 0;
+                if(x==0){
+                    myResolve("OK");
+                }else{
+                    myReject("Error");
+                }
+            });
+            myPromise.then(
+                function(value){sum(5,5);},
+function(error){sum(error);}
+        );
+
+        </script>
+    
+</body>
+</html>
